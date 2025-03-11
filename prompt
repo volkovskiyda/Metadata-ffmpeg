@@ -1,0 +1,6 @@
+Format the file. It should be formated in next template: S01E01 - episode name. 
+Next line should be air date formatted yyyyMMdd. 
+Next line should contains description of the series. 
+Do not cut any provided information. 
+Any other information should be erased. 
+Add empty lines between episodes.
