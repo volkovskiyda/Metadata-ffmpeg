@@ -1,10 +1,17 @@
 import os, ffmpeg, difflib
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def main():
-    season = 'S01'
-    input = f'data/{season}'
-    output = f'output/{season}'
-    artist = 'artist'
+    base_path = os.getenv('BASE_PATH') or '/'
+    artist = os.getenv('ARTIST') or ''
+    season = os.getenv('SEASON') or 'S01'
+
+    input = f'{base_path}/data/{season}'
+    output = f'{base_path}/output/{season}'
+    os.makedirs(output, exist_ok=True)
+
     episodes = episode_list(f'{input}.md')
     episode_titles = titles_of_episodes(episodes)
     for f in sorted(os.listdir(input)):

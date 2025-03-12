@@ -1,7 +1,8 @@
 FROM python
 
-RUN mkdir project data
+RUN mkdir project data output
 VOLUME /data
+VOLUME /output
 
 WORKDIR /project
 COPY main.py requirements.txt /project/
